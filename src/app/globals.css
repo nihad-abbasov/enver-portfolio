@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.myContainer {
+  @apply w-[80%] mx-auto;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
