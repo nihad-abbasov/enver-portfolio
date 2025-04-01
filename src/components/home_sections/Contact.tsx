@@ -1,7 +1,9 @@
+import { MotionWrapper } from "../MotionWrapper";
+
 export const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50 px-4">
-      <div className="container mx-auto max-w-3xl">
+      <MotionWrapper as="section" preset="fadeRight" className="container mx-auto max-w-lg">
         <h2 className="text-4xl font-bold text-center mb-8">Contact Me</h2>
         <form className="space-y-4">
           <input
@@ -24,12 +26,12 @@ export const Contact = () => {
           />
           <button
             type="submit"
-            className="w-max bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition cursor-pointer"
+            className="w-full md:w-max bg-green-600 text-white px-3 py-3 md:py-2 rounded hover:bg-green-700 transition cursor-pointer"
           >
             Submit
           </button>
         </form>
-      </div>
+      </MotionWrapper>
     </section>
   );
 };

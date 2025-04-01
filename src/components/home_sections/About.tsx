@@ -1,3 +1,5 @@
+import { MotionWrapper } from "../MotionWrapper";
+
 export const About = () => {
   const expertise = [
     "SEO & SEM",
@@ -9,10 +11,11 @@ export const About = () => {
 
   return (
     <section className="py-20 bg-white px-4">
-      <div className="container mx-auto max-w-4xl">
+      <MotionWrapper as="section" preset="fadeRight"
+        className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold text-center mb-8">About Me</h2>
         <p className="text-lg text-gray-700 text-center mb-8">
-          I'm Ənvər, a digital marketing specialist passionate about crafting
+          I&apos;m Ənvər, a digital marketing specialist passionate about crafting
           data-driven marketing strategies and engaging content. My goal is to
           help brands enhance their online presence and achieve measurable
           growth.
@@ -28,7 +31,7 @@ export const About = () => {
             </span>
           ))}
         </div>
-      </div>
+      </MotionWrapper>
     </section>
   );
 };
