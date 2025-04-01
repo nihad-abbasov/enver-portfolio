@@ -11,8 +11,24 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ənvər Nağıyev",
-  description: "Digital Marketing Specialist",
+  title: "Ənvar Nağıyev – Digital Marketing Specialist",
+  description: "Explore the portfolio of Ənvar Nağıyev, a digital marketing specialist focused on strategy, content, and performance.",
+  openGraph: {
+    title: "Ənvar Nağıyev – Digital Marketing Specialist",
+    description: "Explore the portfolio of Ənvar Nağıyev, a digital marketing specialist focused on strategy, content, and performance.",
+    url: "https://enver-digital.vercel.app",
+    siteName: "Enver Digital",
+    images: [
+      {
+        url: "https://enver-digital.vercel.app/og-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Ənvar Nağıyev – Digital Marketing Specialist",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
