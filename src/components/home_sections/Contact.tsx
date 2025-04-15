@@ -47,13 +47,12 @@ export const Contact = () => {
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {contactItems.map((item, index) => (
-            <MotionWrapper
-              key={index}
-              preset="fadeUp"
-              delay={index * 0.1}
-              className="group"
-            >
-              <li className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-100 hover:-translate-y-1">
+            <li key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-100 hover:-translate-y-1">
+              <MotionWrapper
+                preset="fadeUp"
+                delay={index * 0.1}
+                className="group"
+              >
                 <div className="flex items-start gap-4">
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
                     {item.icon}
@@ -85,8 +84,8 @@ export const Contact = () => {
                     )}
                   </div>
                 </div>
-              </li>
-            </MotionWrapper>
+              </MotionWrapper>
+            </li>
           ))}
         </ul>
 
