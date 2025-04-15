@@ -1,14 +1,18 @@
 import { MotionWrapper } from "../MotionWrapper";
 
-export const About = () => {
-  const expertise = [
-    "SEO & SEM",
-    "Content Marketing",
-    "Social Media Strategy",
-    "Analytics & Reporting",
-    "Paid Advertising",
-  ];
+interface Expertise {
+  name: string;
+}
 
+const expertise: Expertise[] = [
+  { name: "SEO & SEM" },
+  { name: "Content Marketing" },
+  { name: "Social Media Strategy" },
+  { name: "Analytics & Reporting" },
+  { name: "Paid Advertising" },
+];
+
+export const About = () => {
   return (
     <section className="py-20 bg-white px-4">
       <MotionWrapper as="section" preset="fadeRight"
@@ -21,16 +25,16 @@ export const About = () => {
           growth.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <ul className="flex flex-wrap justify-center gap-3">
           {expertise.map((skill, index) => (
-            <span
+            <li
               key={index}
               className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium"
             >
-              {skill}
-            </span>
+              {skill.name}
+            </li>
           ))}
-        </div>
+        </ul>
       </MotionWrapper>
     </section>
   );

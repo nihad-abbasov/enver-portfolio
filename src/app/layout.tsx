@@ -1,33 +1,45 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import { Header } from "@/components/semantic/Header";
 import { Footer } from "@/components/semantic/Footer";
-import { Main } from "@/components/semantic/Main";
-import { Poppins } from "next/font/google";
-import type { Metadata } from "next";
-import "./globals.css";
+import { SchemaMarkup } from "@/components/semantic/SchemaMarkup";
 
-const poppins = Poppins({
-  weight: ["100", "400", "500", "600", "800"],
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ənvar Nağıyev – Digital Marketing Specialist",
-  description: "Explore the portfolio of Ənvar Nağıyev, a digital marketing specialist focused on strategy, content, and performance.",
+  title: "Enver Nagiyev - Digital Marketing Specialist",
+  description: "Digital marketing specialist helping brands grow through strategic campaigns, engaging content, and analytics-driven insights.",
+  keywords: ["digital marketing", "SEO", "content creation", "social media marketing", "analytics", "email marketing"],
+  authors: [{ name: "Enver Nagiyev" }],
+  creator: "Enver Nagiyev",
   openGraph: {
-    title: "Ənvar Nağıyev – Digital Marketing Specialist",
-    description: "Explore the portfolio of Ənvar Nağıyev, a digital marketing specialist focused on strategy, content, and performance.",
-    url: "https://enver-digital.vercel.app",
-    siteName: "Enver Digital",
-    images: [
-      {
-        url: "https://enver-digital.vercel.app/og-image.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Ənvar Nağıyev – Digital Marketing Specialist",
-      },
-    ],
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    url: "https://enver-nagiyev.vercel.app",
+    title: "Enver Nagiyev - Digital Marketing Specialist",
+    description: "Digital marketing specialist helping brands grow through strategic campaigns, engaging content, and analytics-driven insights.",
+    siteName: "Enver Nagiyev",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enver Nagiyev - Digital Marketing Specialist",
+    description: "Digital marketing specialist helping brands grow through strategic campaigns, engaging content, and analytics-driven insights.",
+    creator: "@envernagiyev",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "your-google-site-verification",
   },
 };
 
@@ -38,9 +50,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head>
+      <body className={inter.className}>
+        <SchemaMarkup />
         <Header />
-        <Main>{children}</Main>
+        {children}
         <Footer />
       </body>
     </html>

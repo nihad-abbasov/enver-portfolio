@@ -1,24 +1,30 @@
 import { MotionWrapper } from "../MotionWrapper";
 
-export const Projects = () => {
-  const projects = [
-    {
-      title: 'Social Media Growth',
-      description: 'Boosted client’s social media engagement by 300% within 6 months through tailored content strategies.',
-      result: '+300% Engagement',
-    },
-    {
-      title: 'SEO Optimization',
-      description: 'Enhanced organic traffic for an e-commerce brand, resulting in a 120% increase in monthly visitors.',
-      result: '+120% Organic Traffic',
-    },
-    {
-      title: 'Content Marketing Campaign',
-      description: 'Executed a successful content strategy achieving consistent audience growth and increased conversion rates.',
-      result: 'Higher Conversions',
-    },
-  ];
+interface Project {
+  title: string;
+  description: string;
+  result: string;
+}
 
+const projects: Project[] = [
+  {
+    title: 'Social Media Growth',
+    description: 'Boosted client’s social media engagement by 300% within 6 months through tailored content strategies.',
+    result: '+300% Engagement',
+  },
+  {
+    title: 'SEO Optimization',
+    description: 'Enhanced organic traffic for an e-commerce brand, resulting in a 120% increase in monthly visitors.',
+    result: '+120% Organic Traffic',
+  },
+  {
+    title: 'Content Marketing Campaign',
+    description: 'Executed a successful content strategy achieving consistent audience growth and increased conversion rates.',
+    result: 'Higher Conversions',
+  },
+];
+
+export const Projects = () => {
   return (
     <section className="py-20 bg-gray-50 px-4">
       <div className="container mx-auto max-w-5xl">

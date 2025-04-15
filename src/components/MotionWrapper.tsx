@@ -1,93 +1,59 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
-import { ReactNode, ElementType } from 'react';
-import React from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
+import { ReactNode } from 'react';
 
-type Preset =
-    | 'fadeUp'
-    | 'fadeDown'
-    | 'fadeLeft'
-    | 'fadeRight'
-    | 'scaleIn'
-    | 'rotateIn';
-
-interface MotionWrapperProps {
+interface MotionWrapperProps extends HTMLMotionProps<"div"> {
     children: ReactNode;
-    as?: ElementType;
-    className?: string;
-    preset?: Preset;
-    duration?: number;
+    preset?: 'fadeUp' | 'fadeDown' | 'fadeLeft' | 'fadeRight';
     delay?: number;
-    once?: boolean;
     stagger?: boolean;
-    staggerDelay?: number;
-    customVariants?: Variants;
+    as?: string;
 }
 
-const presetVariants: Record<Preset, Variants> = {
+const variants = {
     fadeUp: {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
     },
     fadeDown: {
-        hidden: { opacity: 0, y: -40 },
-        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0 }
     },
     fadeLeft: {
-        hidden: { opacity: 0, x: -40 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 }
     },
     fadeRight: {
-        hidden: { opacity: 0, x: 40 },
-        visible: { opacity: 1, x: 0 },
-    },
-    scaleIn: {
-        hidden: { opacity: 0, scale: 0.95 },
-        visible: { opacity: 1, scale: 1 },
-    },
-    rotateIn: {
-        hidden: { opacity: 0, rotate: -5 },
-        visible: { opacity: 1, rotate: 0 },
-    },
+        hidden: { opacity: 0, x: 20 },
+        visible: { opacity: 1, x: 0 }
+    }
 };
 
 export const MotionWrapper = ({
     children,
-    as: MotionElement = 'div',
-    className,
     preset = 'fadeUp',
-    duration = 0.8,
     delay = 0,
-    once = true,
     stagger = false,
-    staggerDelay = 0.15,
-    customVariants,
+    as: Component = 'div',
+    ...props
 }: MotionWrapperProps) => {
-    const variants = customVariants || presetVariants[preset];
-    const Component = motion(MotionElement); // 👈 fix is here
-
-    const parentVariants: Variants = {
-        hidden: {},
-        visible: {
-            transition: stagger ? { staggerChildren: staggerDelay } : {},
-        },
-    };
+    const MotionComponent = motion(Component);
 
     return (
-        <Component
-            className={className}
-            variants={stagger ? parentVariants : variants}
+        <MotionComponent
             initial="hidden"
             whileInView="visible"
-            viewport={{ once }}
-            transition={!stagger ? { duration, delay } : undefined}
+            viewport={{ once: true }}
+            transition={{
+                duration: 0.5,
+                delay: delay,
+                staggerChildren: stagger ? 0.1 : undefined
+            }}
+            variants={variants[preset]}
+            {...props}
         >
-            {stagger
-                ? React.Children.map(children, (child) => (
-                    <motion.div variants={variants}>{child}</motion.div>
-                ))
-                : children}
-        </Component>
+            {children}
+        </MotionComponent>
     );
 };

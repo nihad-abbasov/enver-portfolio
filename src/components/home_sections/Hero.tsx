@@ -1,5 +1,6 @@
 import { MotionWrapper } from "../MotionWrapper";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -12,12 +13,12 @@ export const Hero = () => {
             A digital marketing specialist helping brands grow through strategic
             campaigns, engaging content, and analytics-driven insights.
           </p>
-          <a
+          <Link
             href="#contact"
-            className="inline-block bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
 
         <div className="flex-1 flex justify-center md:justify-end">
