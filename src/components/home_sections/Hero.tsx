@@ -23,7 +23,7 @@ export const Hero = () => {
 
         <div className="flex-1 flex justify-center md:justify-end">
           <Image
-            src="/enver.jpeg"
+            src="/enver.webp"
             width={400}
             height={400}
             alt="Ənvər Nağıyev"

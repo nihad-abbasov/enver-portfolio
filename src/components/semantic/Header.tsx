@@ -8,7 +8,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 flex flex-row items-center justify-between">
         <div className="logo_container">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Business Name"
             width={0}
             height={0}
