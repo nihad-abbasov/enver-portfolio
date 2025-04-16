@@ -8,8 +8,8 @@ import { SchemaMarkup } from "@/components/semantic/SchemaMarkup";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Enver Nagiyev - Digital Marketing Specialist",
-  description: "Digital marketing specialist helping brands grow through strategic campaigns, engaging content, and analytics-driven insights.",
+  title: "Enver Nagiyev | Rəqəmsal Marketinq Mütəxəssisi",
+  description: "Rəqəmsal marketinq üzrə rəqəmsal həllərlə brendinizi onlayn böyüdün. Websayta daxil olaraq peşəkar portfoliomla tanış ola bilərsiz.",
   keywords: ["digital marketing", "SEO", "content creation", "social media marketing", "analytics", "email marketing"],
   authors: [{ name: "Enver Nagiyev" }],
   creator: "Enver Nagiyev",
