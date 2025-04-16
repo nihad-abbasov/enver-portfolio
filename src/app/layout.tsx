@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { SchemaMarkup } from "@/components/semantic/SchemaMarkup";
 import { Header } from "@/components/semantic/Header";
 import { Footer } from "@/components/semantic/Footer";
-import { SchemaMarkup } from "@/components/semantic/SchemaMarkup";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata: Metadata = {
   title: "Enver Nagiyev | Rəqəmsal Marketinq Mütəxəssisi",
@@ -54,7 +57,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#3b82f6" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <SchemaMarkup />
         <Header />
         {children}

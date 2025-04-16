@@ -1,5 +1,5 @@
-import { MotionWrapper } from "../MotionWrapper";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { MotionWrapper } from "../MotionWrapper";
 import Link from 'next/link';
 
 interface ContactItem {

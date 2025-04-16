@@ -1,6 +1,6 @@
+import { MobileMenu } from "./MobileMenu";
 import Image from "next/image";
 import { Nav } from "./Nav";
-import { MobileMenu } from "./MobileMenu";
 
 export const Header = () => {
   return (
