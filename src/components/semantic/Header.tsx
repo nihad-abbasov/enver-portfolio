@@ -9,7 +9,8 @@ export const Header = () => {
         <div className="logo_container">
           <Image
             src="/logo.webp"
-            alt="Business Name"
+            alt="Anvar Nağıyev"
+            title="Anvar Nağıyev"
             width={0}
             height={0}
             sizes="100vw"

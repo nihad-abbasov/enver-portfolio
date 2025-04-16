@@ -24,9 +24,10 @@ export const Hero = () => {
         <div className="flex-1 flex justify-center md:justify-end">
           <Image
             src="/enver.webp"
+            alt="Ənvər Nağıyev"
+            title="Ənvər Nağıyev"
             width={400}
             height={400}
-            alt="Ənvər Nağıyev"
             className="rounded-full shadow-lg object-cover"
             priority
           />
